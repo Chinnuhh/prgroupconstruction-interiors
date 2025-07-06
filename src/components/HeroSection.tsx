@@ -18,7 +18,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 gradient-hero"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
@@ -49,7 +49,7 @@ const HeroSection = () => {
               onClick={handleExploreDesigns}
               variant="outline"
               size="lg"
-              className="glass border-white/30 text-white hover:bg-white/20 text-lg px-8 py-4 h-auto"
+              className="glass border-accent/50 text-accent hover:bg-accent/20 text-lg px-8 py-4 h-auto"
             >
               <Lightbulb className="w-5 h-5 mr-2" />
               Explore Design Ideas

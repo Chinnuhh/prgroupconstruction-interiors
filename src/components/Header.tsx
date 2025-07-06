@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import AiChatPopup from './AiChatPopup';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAiChatOpen, setIsAiChatOpen] = useState(false);
 
   return (
     <header className="fixed top-0 w-full z-50 bg-card/95 backdrop-blur-lg border-b border-border shadow-sm">
@@ -26,7 +28,7 @@ const Header = () => {
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
             <a href="#design-ideas" className="text-foreground hover:text-primary transition-colors">Design Ideas</a>
             <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
-            <a href="#ai-agent" className="text-foreground hover:text-primary transition-colors">AI Agent</a>
+            <button onClick={() => setIsAiChatOpen(true)} className="text-foreground hover:text-primary transition-colors">AI Agent</button>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </nav>
 
@@ -57,7 +59,7 @@ const Header = () => {
               <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
               <a href="#design-ideas" className="text-foreground hover:text-primary transition-colors">Design Ideas</a>
               <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
-              <a href="#ai-agent" className="text-foreground hover:text-primary transition-colors">AI Agent</a>
+              <button onClick={() => setIsAiChatOpen(true)} className="text-foreground hover:text-primary transition-colors">AI Agent</button>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
               <Button 
                 onClick={() => window.open('https://wa.me/918886663807', '_blank')}
@@ -69,6 +71,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      <AiChatPopup isOpen={isAiChatOpen} onClose={() => setIsAiChatOpen(false)} />
     </header>
   );
 };
