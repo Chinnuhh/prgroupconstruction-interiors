@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import AiChatPopup from './AiChatPopup';
+import prGroupLogo from '@/assets/pr-group-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +14,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center font-bold text-xl text-primary-foreground">
-              PR
-            </div>
+            <img 
+              src={prGroupLogo} 
+              alt="PR Group Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div>
               <h1 className="font-bold text-xl text-foreground">PR Group</h1>
               <p className="text-xs text-muted-foreground">Precision Redefined</p>
